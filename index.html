@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSC CEREMONY AT LIMBÉ — 10 Embeds + Link Replacer</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 30px 15px;
+  }
+  .embed-container {
+    max-width: 620px;
+    margin: 0 auto 30px auto;
+    background: #fff;
+    padding: 18px 18px 14px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  .embed-container h3 {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    color: #222;
+  }
+  .play-btn {
+    background: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 10px 26px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .play-btn:hover {
+    background: #cc0000;
+  }
+  iframe {
+    display: none;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+    border-radius: 6px;
+  }
+  .link-replacer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+    align-items: center;
+    background: #f9f9f9;
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px dashed #bbb;
+  }
+  .link-replacer label {
+    font-size: 13px;
+    color: #555;
+    font-weight: bold;
+    flex: 0 0 auto;
+  }
+  .link-replacer input[type="text"] {
+    flex: 1 1 200px;
+    padding: 8px 10px;
+    font-size: 13px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+    background: #fff;
+  }
+  .link-replacer input[type="text"]:focus {
+    outline: none;
+    border-color: #ff0000;
+    box-shadow: 0 0 0 2px rgba(255,0,0,0.15);
+  }
+  .link-replacer .replace-btn {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .link-replacer .replace-btn:hover {
+    background: #000;
+  }
+  .status {
+    font-size: 12px;
+    color: #2a7a2a;
+    margin-left: 4px;
+    min-width: 40px;
+  }
+</style>
+</head>
+<body>
+
+<h2 style="text-align:center; margin-bottom:28px;">CSC CEREMONY AT LIMBÉ</h2>
+
+<!-- EMBED 1 -->
+<div class="embed-container">
+  <h3>Video 1</h3>
+  <button class="play-btn" onclick="playVideo(this, 1)">▶ Play Video</button>
+  <iframe id="vid1" src="https://www.youtube.com/embed/UCXhCkL9g8M?autoplay=1" title="Video 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <div class="link-replacer">
+    <label for="link1">Paste new link:</label>
+    <input type="text" id="link1" placeholder="https://www.youtube.com/watch?v=... or embed URL" onkeydown="if(event.key==='Enter'){replaceVideo(1)}">
+    <button class="replace-btn" onclick="replaceVideo(1)">Replace</button>
+    <span class="status" id="status1"></span>
+  </div>
+</div>
+
+<!-- EMBED 2 -->
+<div class="embed-container">
+  <h3>Video 2</h3>
+  <button class="play-btn" onclick="playVideo(this, 2)">▶ Play Video</button>
+  <iframe id="vid2" src="https://www.youtube.com/embed/UCXhCkL9g8M?autoplay=1" title="Video 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <div class="link-replacer">
+    <label for="link2">Paste new link:</label>
+    <input type="text" id="link2" placeholder="https://www.youtube.com/watch?v=... or embed URL" onkeydown="if(event.key==='Enter'){replaceVideo(2)}">
+    <button class="replace-btn" onclick="replaceVideo(2)">Replace</button>
+    <span class="status" id="status2"></span>
+  </div>
+</div>
+
+<!-- EMBED 3 -->
+<div class="embed-container">
+  <h3>Video 3</h3>
+  <button class="play-btn" onclick="playVideo(this, 3)">▶ Play Video</button>
+  <iframe id="vid3" src="https://www.youtube.com/embed/UCXhCkL9g8M?autoplay=1" title="Video 3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <div class="link-replacer">
+    <label for="link3">Paste new link:</label>
+    <input type="text" id="link3" placeholder="https://www.youtube.com/watch?v=... or embed URL" onkeydown="if(event.key==='Enter'){replaceVideo(3)}">
+    <button class="replace-btn" onclick="replaceVideo(3)">Replace</button>
+    <span class="status" id="status3"></span>
+  </div>
+</div>
+
+<!-- EMBED 4 -->
+<div class="embed-container">
+  <h3>Video 4</h3>
+  <button class="play-btn" onclick="playVideo(this, 4)">▶ Play Video</button>
+  <iframe id="vid4" src="https://www.youtube.com/embed/UCXhCkL9g8M?autoplay=1" title="Video 4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <div class="link-replacer">
+    <label for="link4">Paste new link:</label>
+    <input type="text" id="link4" placeholder="https://www.youtube.com/watch?v=... or embed URL" onkeydown="if(event.key==='Enter'){replaceVideo(4)}">
+    <button class="replace-btn" onclick="replaceVideo(4)">Replace</button>
+    <span class="status" id="status4"></span>
+  </div>
+</div>
+
+<!-- EMBED 5 -->
+<div class="embed-container">
+  <h3>Video 5</h3>
+  <button class="play-btn" onclick="playVideo(this, 5)">▶ Play Video</button>
+  <iframe id="vid5" src="https://www.youtube.com/embed/UCXhCkL9g8M?autoplay=1" title="Video 5" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <div class="link-replacer">
+    <label for="link5">Paste new link:</label>
+    <input type="text" id="link5" placeholder="https://www.youtube.com/watch?v=... or embed URL" onkeydown="if(event.key==='Enter'){replaceVideo(5)}">
+    <button class="replace-btn" onclick="replaceVideo(5)">Replace</button>
+    <span class="status" id="status5"></span>
+  </div>
+</div>
+
+<!-- EMBED 6 -->
+<div class="embed-container">
+  <h3>Video 6</h3>
+  <button class="play-btn" onclick="playVideo(this, 6)">▶ Play Video</button>
+  <iframe id="vid6" src="https://www.youtube.com/embed/UCXhCkL9g8M?autoplay=1" title="Video 6" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <div class="link-replacer">
+    <label for="link6">Paste new link:</label>
+    <input type="text" id="link6" placeholder="https://www.youtube.com/watch?v=... or embed URL" onkeydown="if(event.key==='Enter'){replaceVideo(6)}">
+    <button class="replace-btn" onclick="replaceVideo(6)">Replace</button>
+    <span class="status" id="status6"></span>
+  </div>
+</div>
+
+<!-- EMBED 7 -->
+<div class="embed-container">
+  <h3>Video 7</h3>
+  <button class="play-btn" onclick="playVideo(this, 7)">▶ Play Video</button>
+  <iframe id="vid7" src="https://www.youtube.com/embed/UCXhCkL9g8M?autoplay=1" title="Video 7" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <div class="link-replacer">
+    <label for="link7">Paste new link:</label>
+    <input type="text" id="link7" placeholder="https://www.youtube.com/watch?v=... or embed URL" onkeydown="if(event.key==='Enter'){replaceVideo(7)}">
+    <button class="replace-btn" onclick="replaceVideo(7)">Replace</button>
+    <span class="status" id="status7"></span>
+  </div>
+</div>
+
+<!-- EMBED 8 -->
+<div class="embed-container">
+  <h3>Video 8</h3>
+  <button class="play-btn" onclick="playVideo(this, 8)">▶ Play Video</button>
+  <iframe id="vid8" src="https://www.youtube.com/embed/UCXhCkL9g8M?autoplay=1" title="Video 8" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <div class="link-replacer">
+    <label for="link8">Paste new link:</label>
+    <input type="text" id="link8" placeholder="https://www.youtube.com/watch?v=... or embed URL" onkeydown="if(event.key==='Enter'){replaceVideo(8)}">
+    <button class="replace-btn" onclick="replaceVideo(8)">Replace</button>
+    <span class="status" id="status8"></span>
+  </div>
+</div>
+
+<!-- EMBED 9 -->
+<div class="embed-container">
+  <h3>Video 9</h3>
+  <button class="play-btn" onclick="playVideo(this, 9)">▶ Play Video</button>
+  <iframe id="vid9" src="https://www.youtube.com/embed/UCXhCkL9g8M?autoplay=1" title="Video 9" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <div class="link-replacer">
+    <label for="link9">Paste new link:</label>
+    <input type="text" id="link9" placeholder="https://www.youtube.com/watch?v=... or embed URL" onkeydown="if(event.key==='Enter'){replaceVideo(9)}">
+    <button class="replace-btn" onclick="replaceVideo(9)">Replace</button>
+    <span class="status" id="status9"></span>
+  </div>
+</div>
+
+<!-- EMBED 10 -->
+<div class="embed-container">
+  <h3>Video 10</h3>
+  <button class="play-btn" onclick="playVideo(this, 10)">▶ Play Video</button>
+  <iframe id="vid10" src="https://www.youtube.com/embed/UCXhCkL9g8M?autoplay=1" title="Video 10" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <div class="link-replacer">
+    <label for="link10">Paste new link:</label>
+    <input type="text" id="link10" placeholder="https://www.youtube.com/watch?v=... or embed URL" onkeydown="if(event.key==='Enter'){replaceVideo(10)}">
+    <button class="replace-btn" onclick="replaceVideo(10)">Replace</button>
+    <span class="status" id="status10"></span>
+  </div>
+</div>
+
+<script>
+  /* ----- Play / show iframe ----- */
+  function playVideo(button, id) {
+    button.style.display = "none";
+    var iframe = document.getElementById("vid" + id);
+    iframe.style.display = "block";
+  }
+
+  /* ----- Extract YouTube embed URL from various link formats ----- */
+  function extractEmbedUrl(raw) {
+    if (!raw) return null;
+    var input = raw.trim();
+    if (!input) return null;
+
+    // Already an embed URL
+    if (/youtube\.com\/embed\/[A-Za-z0-9_-]{6,}/.test(input)) {
+      return input;
+    }
+
+    var videoId = null;
+
+    // youtu.be/ID  or  youtu.be/ID?t=...
+    var shortMatch = input.match(/youtu\.be\/([A-Za-z0-9_-]{6,})/);
+    if (shortMatch) videoId = shortMatch[1];
+
+    // youtube.com/watch?v=ID
+    if (!videoId) {
+      var watchMatch = input.match(/[?&]v=([A-Za-z0-9_-]{6,})/);
+      if (watchMatch) videoId = watchMatch[1];
+    }
+
+    // youtube.com/shorts/ID
+    if (!videoId) {
+      var shortsMatch = input.match(/youtube\.com\/shorts\/([A-Za-z0-9_-]{6,})/);
+      if (shortsMatch) videoId = shortsMatch[1];
+    }
+
+    // youtube.com/live/ID
+    if (!videoId) {
+      var liveMatch = input.match(/youtube\.com\/live\/([A-Za-z0-9_-]{6,})/);
+      if (liveMatch) videoId = liveMatch[1];
+    }
+
+    // Plain video ID (11 chars typical)
+    if (!videoId && /^[A-Za-z0-9_-]{11}$/.test(input)) {
+      videoId = input;
+    }
+
+    if (videoId) {
+      return "https://www.youtube.com/embed/" + videoId + "?autoplay=1";
+    }
+
+    // If it's some other iframe-able URL (e.g. Vimeo), return as-is
+    if (/^https?:\/\//i.test(input)) {
+      return input;
+    }
+
+    return null;
+  }
+
+  /* ----- Replace the iframe source for a given card ----- */
+  function replaceVideo(id) {
+    var inputField = document.getElementById("link" + id);
+    var statusEl   = document.getElementById("status" + id);
+    var iframe     = document.getElementById("vid" + id);
+
+    var raw = inputField.value;
+    var newSrc = extractEmbedUrl(raw);
+
+    if (!newSrc) {
+      statusEl.style.color = "#c00";
+      statusEl.textContent = "✗ Invalid link";
+      return;
+    }
+
+    // Update iframe source
+    iframe.src = newSrc;
+
+    // Make sure the video is visible (hide the play button if it's still showing)
+    iframe.style.display = "block";
+    var button = iframe.parentElement.querySelector(".play-btn");
+    if (button) button.style.display = "none";
+
+    // Clear input & show confirmation
+    inputField.value = "";
+    statusEl.style.color = "#2a7a2a";
+    statusEl.textContent = "✓ Replaced";
+    setTimeout(function () {
+      statusEl.textContent = "";
+    }, 2500);
+  }
+
+  /* ----- Optional: press Enter in the input triggers replace (already in onkeydown) ----- */
+</script>
+
+</body>
+</html>
