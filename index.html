@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CSC CEREMONY · LIMBÉ · 10 embeds + top replacer</title>
+  <title>CSC CEREMONY · LIMBÉ · 17 embeds + top replacer</title>
   <style>
     * { box-sizing: border-box; }
     body {
@@ -194,12 +194,12 @@
   <div class="input-group">
     <input type="text" id="globalLink" placeholder="YouTube URL, youtu.be, shorts, live, or full embed link…" 
            onkeydown="if(event.key==='Enter') replaceAllVideos()">
-    <button class="btn-replace-all" onclick="replaceAllVideos()">⟳ REPLACE ALL 10</button>
+    <button class="btn-replace-all" onclick="replaceAllVideos()">⟳ REPLACE ALL 17</button>
   </div>
   <span class="global-status" id="globalStatus"></span>
 </div>
 
-<!-- 10 VIDEO CARDS (no autoplay, play button remains visible) -->
+<!-- 17 VIDEO CARDS (no autoplay, play button remains visible) -->
 <div class="video-grid" id="videoGrid">
   <!-- EMBED 1 -->
   <div class="embed-container" data-id="1">
@@ -280,6 +280,62 @@
     <iframe id="vid10" data-src="https://www.youtube.com/embed/UCXhCkL9g8M" title="Video 10" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     <div class="card-note">individual link replaced automatically</div>
   </div>
+
+  <!-- EMBED 11 -->
+  <div class="embed-container" data-id="11">
+    <h3>Video 11 <span>#11</span></h3>
+    <button class="play-btn" onclick="playVideo(this, 11)">▶ Play Video</button>
+    <iframe id="vid11" data-src="https://www.youtube.com/embed/UCXhCkL9g8M" title="Video 11" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <div class="card-note">individual link replaced automatically</div>
+  </div>
+
+  <!-- EMBED 12 -->
+  <div class="embed-container" data-id="12">
+    <h3>Video 12 <span>#12</span></h3>
+    <button class="play-btn" onclick="playVideo(this, 12)">▶ Play Video</button>
+    <iframe id="vid12" data-src="https://www.youtube.com/embed/UCXhCkL9g8M" title="Video 12" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <div class="card-note">individual link replaced automatically</div>
+  </div>
+
+  <!-- EMBED 13 -->
+  <div class="embed-container" data-id="13">
+    <h3>Video 13 <span>#13</span></h3>
+    <button class="play-btn" onclick="playVideo(this, 13)">▶ Play Video</button>
+    <iframe id="vid13" data-src="https://www.youtube.com/embed/UCXhCkL9g8M" title="Video 13" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <div class="card-note">individual link replaced automatically</div>
+  </div>
+
+  <!-- EMBED 14 -->
+  <div class="embed-container" data-id="14">
+    <h3>Video 14 <span>#14</span></h3>
+    <button class="play-btn" onclick="playVideo(this, 14)">▶ Play Video</button>
+    <iframe id="vid14" data-src="https://www.youtube.com/embed/UCXhCkL9g8M" title="Video 14" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <div class="card-note">individual link replaced automatically</div>
+  </div>
+
+  <!-- EMBED 15 -->
+  <div class="embed-container" data-id="15">
+    <h3>Video 15 <span>#15</span></h3>
+    <button class="play-btn" onclick="playVideo(this, 15)">▶ Play Video</button>
+    <iframe id="vid15" data-src="https://www.youtube.com/embed/UCXhCkL9g8M" title="Video 15" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <div class="card-note">individual link replaced automatically</div>
+  </div>
+
+  <!-- EMBED 16 -->
+  <div class="embed-container" data-id="16">
+    <h3>Video 16 <span>#16</span></h3>
+    <button class="play-btn" onclick="playVideo(this, 16)">▶ Play Video</button>
+    <iframe id="vid16" data-src="https://www.youtube.com/embed/UCXhCkL9g8M" title="Video 16" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <div class="card-note">individual link replaced automatically</div>
+  </div>
+
+  <!-- EMBED 17 -->
+  <div class="embed-container" data-id="17">
+    <h3>Video 17 <span>#17</span></h3>
+    <button class="play-btn" onclick="playVideo(this, 17)">▶ Play Video</button>
+    <iframe id="vid17" data-src="https://www.youtube.com/embed/UCXhCkL9g8M" title="Video 17" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <div class="card-note">individual link replaced automatically</div>
+  </div>
 </div>
 
 <script>
@@ -347,7 +403,7 @@
     return null;
   }
 
-  /* ----- REPLACE ALL 10 VIDEOS WITH THE SAME LINK (NO AUTOPLAY) ----- */
+  /* ----- REPLACE ALL 17 VIDEOS WITH THE SAME LINK (NO AUTOPLAY) ----- */
   function replaceAllVideos() {
     var globalInput = document.getElementById("globalLink");
     var statusEl = document.getElementById("globalStatus");
@@ -360,8 +416,8 @@
       return;
     }
 
-    // Loop 1 to 10: update iframe data-src, hide play button, show iframe
-    for (var i = 1; i <= 10; i++) {
+    // Loop 1 to 17: update iframe data-src, hide play button, show iframe
+    for (var i = 1; i <= 17; i++) {
       var iframe = document.getElementById("vid" + i);
       if (iframe) {
         iframe.dataset.src = newSrc;
@@ -380,7 +436,7 @@
     // Clear input & show success
     globalInput.value = "";
     statusEl.style.color = "#1f7a1f";
-    statusEl.textContent = "✓ All 10 updated (click play to view)";
+    statusEl.textContent = "✓ All 17 updated (click play to view)";
     setTimeout(function () {
       statusEl.textContent = "";
     }, 2800);
